@@ -1,13 +1,14 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
+import { RootTabParamList } from '../../../types/types'
 import { colors } from '../../../theme'
 
 // stack navigators
 import HomeStack from '../stacks/HomeStack'
 import ProfileStack from '../stacks/ProfileStack'
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator<RootTabParamList>()
 
 const TabNavigator = () => {
   return (

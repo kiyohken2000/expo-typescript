@@ -9,12 +9,24 @@ export default function Home() {
     navigation.navigate('Details')
   }
 
+  const goModal = () => {
+    navigation.navigate('ModalStack', {
+      screen: 'Post',
+      params: {from: 'Home'}
+    })
+  }
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => onButtonPress()}
       >
         <Text>go detail!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => goModal()}
+      >
+        <Text>go modal</Text>
       </TouchableOpacity>
     </View>
   );

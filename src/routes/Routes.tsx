@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { View } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { authenticate } from '../slices/app.slice'
 import Main from './navigation'
@@ -12,6 +13,13 @@ export default function Routes() {
   }, [])
 
   console.log('[##] loggedIn', loggedIn)
+
+  // rendering
+  if (!checked) {
+    return (
+      <View />
+    )
+  }
 
   return (
     <Main />

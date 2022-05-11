@@ -1,12 +1,11 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import HomeStack from './stacks/HomeStack'
-import TabNavigator from './tabs/Tabs'
+import RootStack from './rootstack/RootStack'
 
-export default () => {
+export default function Main() {
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <RootStack />
     </NavigationContainer>
   )
 }
