@@ -24,6 +24,8 @@ export default function Write() {
             label='Go History'
             color={colors.purple}
             fontSize={fontSize.large}
+            disable={false}
+            loading={false}
             onPress={() =>goHistory()}
           />
         </View>

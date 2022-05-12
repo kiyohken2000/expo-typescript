@@ -77,6 +77,8 @@ export default function Home() {
             label='go detail!'
             color={colors.lightPurple}
             fontSize={fontSize.large}
+            disable={false}
+            loading={false}
             onPress={() => onButtonPress()}
           />
         </View>
@@ -85,6 +87,8 @@ export default function Home() {
             label='go modal'
             color={colors.purple}
             fontSize={fontSize.large}
+            disable={false}
+            loading={false}
             onPress={() => goModal()}
           />
         </View>
@@ -93,6 +97,8 @@ export default function Home() {
             label='App Reload'
             color={colors.pink}
             fontSize={fontSize.large}
+            disable={false}
+            loading={false}
             onPress={() => Restart()}
           />
         </View>
@@ -101,6 +107,8 @@ export default function Home() {
             label='Save Date'
             color={colors.chocolate}
             fontSize={fontSize.large}
+            disable={false}
+            loading={false}
             onPress={() => onSavePress()}
           />
         </View>
@@ -109,7 +117,29 @@ export default function Home() {
             label='Remove Date'
             color={colors.navy}
             fontSize={fontSize.large}
+            disable={false}
+            loading={false}
             onPress={() => onRemovePress()}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            label='Disable Button'
+            color={colors.navy}
+            fontSize={fontSize.large}
+            disable={true}
+            loading={false}
+            onPress={() => console.log('on press')}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            label='Loading Button'
+            color={colors.navy}
+            fontSize={fontSize.large}
+            disable={false}
+            loading={true}
+            onPress={() => console.log('on press')}
           />
         </View>
       </View>
@@ -125,6 +155,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: '70%',
-    paddingVertical: 10
+    paddingVertical: 5
   }
 });

@@ -22,6 +22,8 @@ export default function Read() {
           label='Go History'
           color={colors.purple}
           fontSize={fontSize.large}
+          disable={false}
+          loading={false}
           onPress={() =>goHistory()}
         />
       </View>
