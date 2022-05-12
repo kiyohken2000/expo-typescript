@@ -6,6 +6,7 @@ import ScreenTemplate from '../../components/ScreenTemplate';
 import axios from 'axios';
 import RenderItem from './RenderItem';
 import Loading from '../../components/Loading';
+import { Divider } from "@rneui/themed";
 
 export type ProfileProps = StackScreenProps<RootStackParamList, 'Profile'>;
 
@@ -41,7 +42,12 @@ export default function Profile() {
       {!isLoading?
         <ScrollView style={styles.container}>
           {data.map((item: Item, i) => {
-            return <RenderItem key={item.id} item={item} />
+            return (
+              <View key={item.id} >
+                <RenderItem item={item} />
+                <Divider />
+              </View>
+            )
           })}
         </ScrollView>
         :

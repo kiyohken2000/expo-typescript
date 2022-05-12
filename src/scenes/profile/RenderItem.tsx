@@ -1,15 +1,24 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { fontSize } from "../../theme";
+import { useNavigation } from "@react-navigation/native";
 
 export default function RenderItem(props: any) {
   const { userId, id, title, body } = props.item
+  const navigation = useNavigation()
+
+  const onButtonPress = () => {
+    navigation.navigate('Favorite', {item: props.item})
+  }
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => onButtonPress()}
+    >
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.body}>{body}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 

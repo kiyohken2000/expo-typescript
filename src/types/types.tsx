@@ -17,6 +17,7 @@ export type RootStackParamList = {
   Home: undefined;
   Details: undefined;
   Profile: undefined;
+  Favorite: {item: any};
   Post: {from: string};
   Print: undefined;
   Read: undefined;

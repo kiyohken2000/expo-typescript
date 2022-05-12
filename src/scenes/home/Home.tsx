@@ -19,7 +19,6 @@ export default function Home() {
   const [date, setDate] = useState('')
 
   useEffect(() => {
-    console.log(userData)
     loadStorage()
   }, [])
 

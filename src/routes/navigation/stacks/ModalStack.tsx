@@ -19,7 +19,8 @@ export default function ModalStack() {
         component={Post}
         options={{
           title: 'Post',
-          headerBackTitle: '戻る',
+          headerBackTitle: 'Back',
+          headerBackTitleVisible: false
         }}
       />
       <Stack.Screen
