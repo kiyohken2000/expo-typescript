@@ -1,27 +1,20 @@
-import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Post() {
-  const route = useRoute()
+export default function Write() {
   const navigation = useNavigation()
-  const { from } = route.params
 
-  useEffect(() => {
-    console.log(from)
-  }, [])
-
-  const goPrint = () => {
-    navigation.navigate('Print')
+  const goHistory = () => {
+    navigation.navigate('History')
   }
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => goPrint()}
+        onPress={() =>goHistory()}
       >
-        <Text>Go Print</Text>
+        <Text>Go History</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>

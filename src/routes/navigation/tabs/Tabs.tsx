@@ -7,6 +7,7 @@ import { colors } from '../../../theme'
 // stack navigators
 import HomeStack from '../stacks/HomeStack'
 import ProfileStack from '../stacks/ProfileStack'
+import ReadWriteStack from '../stacks/ReadWriteStack'
 
 const Tab = createBottomTabNavigator<RootTabParamList>()
 
@@ -56,6 +57,20 @@ const TabNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <FontIcon
               name="user"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ReadWriteTab"
+        component={ReadWriteStack}
+        options={{
+          tabBarLabel: 'R/W',
+          tabBarIcon: ({ color, size }) => (
+            <FontIcon
+              name="address-card"
               color={color}
               size={size}
             />

@@ -19,6 +19,11 @@ export type RootStackParamList = {
   Details: undefined;
   Profile: undefined;
   Post: undefined;
+  Print: undefined;
+  Read: undefined;
+  Write: undefined;
+  History: undefined;
+  ReadWrite: undefined;
   HomeRoot: undefined;
   ModalStack: undefined;
 };
@@ -31,6 +36,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Stac
 export type RootTabParamList = {
   HomeTab: undefined;
   ProfileTab: undefined;
+  ReadWriteTab: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
