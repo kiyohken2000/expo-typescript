@@ -3,9 +3,9 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
-import { StackScreenProps } from '@react-navigation/stack'
+import { BottomTabScreenProps, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { CompositeScreenProps, CompositeNavigationProp } from '@react-navigation/native';
+import { StackScreenProps, StackNavigationProp } from '@react-navigation/stack'
 
 declare global {
   namespace ReactNavigation {
@@ -14,19 +14,23 @@ declare global {
 }
 
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Home: undefined;
   Details: undefined;
   Profile: undefined;
-  Post: undefined;
+  Post: {from: string};
   Print: undefined;
   Read: undefined;
   Write: undefined;
   History: undefined;
   ReadWrite: undefined;
   HomeRoot: undefined;
-  ModalStack: undefined;
+  ModalStack: {from: string};
 };
+
+export type HomeScreenNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<RootTabParamList, 'HomeTab'>,
+  StackNavigationProp<RootStackParamList>
+>;
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = StackScreenProps<
   RootStackParamList,

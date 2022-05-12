@@ -1,19 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types/types';
+import ScreenTemplate from '../../components/ScreenTemplate';
+
+export type HistoryProps = StackScreenProps<RootStackParamList, 'History'>;
 
 export default function History() {
   return (
-    <View style={styles.container}>
-      <Text>History</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScreenTemplate>
+      <View style={styles.container}>
+        <Text>History</Text>
+      </View>
+    </ScreenTemplate>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

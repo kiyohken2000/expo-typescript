@@ -1,6 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types/types';
+import Button from '../../components/Button';
+import { colors, fontSize } from '../../theme';
+import ScreenTemplate from '../../components/ScreenTemplate';
+
+export type WriteProps = StackScreenProps<RootStackParamList, 'Write'>;
 
 export default function Write() {
   const navigation = useNavigation()
@@ -10,22 +17,29 @@ export default function Write() {
   }
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() =>goHistory()}
-      >
-        <Text>Go History</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <ScreenTemplate>
+      <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button
+            label='Go History'
+            color={colors.purple}
+            fontSize={fontSize.large}
+            onPress={() =>goHistory()}
+          />
+        </View>
+      </View>
+    </ScreenTemplate>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonContainer: {
+    width: '70%',
+    paddingVertical: 10
+  }
 });

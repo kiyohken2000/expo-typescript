@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import { Provider } from 'react-redux'
 import store from './utils/store';
 import Router from './routes'
+import { UserDataContextProvider } from './contexts/UserDataContext';
 
 import { imageAssets } from './theme/images';
 import { fontAssets } from './theme/fonts';
@@ -28,7 +29,9 @@ export default function App() {
   
   return (
     <Provider store={store}>
-      <Router />
+      <UserDataContextProvider>
+        <Router />
+      </UserDataContextProvider>
     </Provider>
   );
 }

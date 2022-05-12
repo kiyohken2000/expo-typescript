@@ -10,7 +10,7 @@ const Tab = createMaterialTopTabNavigator()
 export default function ReadWriteTopTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="WriteTab"
+      initialRouteName="ReadTab"
       screenOptions={screenOptions}
     >
       <Tab.Screen

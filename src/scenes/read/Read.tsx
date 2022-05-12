@@ -1,6 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types/types';
+import Button from '../../components/Button';
+import { colors, fontSize } from '../../theme';
+
+export type ReadProps = StackScreenProps<RootStackParamList, 'Read'>;
 
 export default function Read() {
   const navigation = useNavigation()
@@ -11,12 +17,14 @@ export default function Read() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() =>goHistory()}
-      >
-        <Text>Go History</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
+      <View style={styles.buttonContainer}>
+        <Button
+          label='Go History'
+          color={colors.purple}
+          fontSize={fontSize.large}
+          onPress={() =>goHistory()}
+        />
+      </View>
     </View>
   );
 }
@@ -28,4 +36,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonContainer: {
+    width: '70%',
+    paddingVertical: 10
+  }
 });

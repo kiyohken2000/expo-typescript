@@ -17,7 +17,7 @@ export default function ReadWriteStack() {
         name="ReadWrite"
         component={ReadWriteTopTabs}
         options={{
-          title: 'ReadWrite',
+          title: 'Read/Write',
         }}
       />
     </Stack.Navigator>

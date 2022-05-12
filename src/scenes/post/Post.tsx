@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { useRoute, useNavigation, RouteProp } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types/types';
+import Button from '../../components/Button';
+import { colors, fontSize } from '../../theme';
+import ScreenTemplate from '../../components/ScreenTemplate';
+
+export type PostProps = StackScreenProps<RootStackParamList, 'Post'>;
 
 export default function Post() {
-  const route = useRoute()
+  const route = useRoute<RouteProp<RootStackParamList, 'Post'>>()
   const navigation = useNavigation()
   const { from } = route.params
 
@@ -17,22 +23,29 @@ export default function Post() {
   }
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => goPrint()}
-      >
-        <Text>Go Print</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <ScreenTemplate>
+      <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button
+            label='Go Print'
+            color={colors.purple}
+            fontSize={fontSize.large}
+            onPress={() => goPrint()}
+          />
+        </View>
+      </View>
+    </ScreenTemplate>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonContainer: {
+    width: '70%',
+    paddingVertical: 10
+  }
 });

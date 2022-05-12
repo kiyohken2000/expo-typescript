@@ -6,7 +6,7 @@ const labelSize = Platform.select({
   android: 12
 })
 
-const screenOptions= {
+const screenOptions = {
   tabBarLabelStyle: {
     fontSize: labelSize
   },
