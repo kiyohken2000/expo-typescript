@@ -36,7 +36,7 @@ export default function RootStack() {
       if (finalStatus !== "granted") {
         return;
       }
-      const {data } = await Notifications.getExpoPushTokenAsync();
+      const { data } = await Notifications.getExpoPushTokenAsync();
       console.log(userData)
       console.log(data)
     })();

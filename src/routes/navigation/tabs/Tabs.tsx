@@ -14,7 +14,12 @@ const Tab = createBottomTabNavigator<RootTabParamList>()
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      options={{
+      defaultScreenOptions={{
+        headerShown:false,
+        headerTransparent:true,
+      }}
+      screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarActiveTintColor: colors.lightPurple,
         tabBarInactiveTintColor: colors.gray,
         tabBarStyle: {
@@ -24,16 +29,8 @@ const TabNavigator = () => {
           // paddingBottom: 5,
           // paddingTop: 5,
         }
-      }}
-      defaultScreenOptions={{
-        headerShown:false,
-        headerTransparent:true
-      }}
-      screenOptions={({ route }) => ({
-        headerShown: false,
       })}
       initialRouteName="HomeTab"
-      swipeEnabled={false}
     >
       <Tab.Screen
         name="HomeTab"

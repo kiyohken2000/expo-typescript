@@ -35,7 +35,6 @@ const appSlice = createSlice({
   },
 })
 
-export const { action } = appSlice
 export const { authenticate, saveMe } = appSlice.actions
 
 export default appSlice.reducer

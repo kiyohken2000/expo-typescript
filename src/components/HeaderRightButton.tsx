@@ -3,10 +3,12 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from "../theme";
 import { useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "../types/types";
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export default function HeaderRightButton(props: any) {
   const { from } = props
-  const navigation = useNavigation()
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Home'>>()
 
   const onButtonPress = () => {
     navigation.navigate('ModalStack', {

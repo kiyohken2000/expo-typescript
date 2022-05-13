@@ -25,7 +25,7 @@ export type RootStackParamList = {
   History: undefined;
   ReadWrite: undefined;
   HomeRoot: undefined;
-  ModalStack: {from: string};
+  ModalStack: { screen: string; params: { from: any; }; };
 };
 
 export type HomeScreenNavigationProp = CompositeNavigationProp<

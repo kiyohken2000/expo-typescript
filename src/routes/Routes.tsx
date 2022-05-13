@@ -4,7 +4,7 @@ import Main from './navigation'
 import Initial from '../scenes/initial/Initial'
 
 export default function Routes() {
-  const { checked, loggedIn } = useSelector((state) => state.app)
+  const { checked, loggedIn } = useSelector((state: any) => state.app)
 
   console.log('[##] loggedIn', loggedIn)
 

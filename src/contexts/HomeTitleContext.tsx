@@ -1,6 +1,11 @@
 import React, { createContext } from 'react'
 
-export const HomeTitleContext = createContext({
+interface Props {
+  title: any;
+  setTitle: any;
+}
+
+export const HomeTitleContext = createContext<Partial<Props>>({
   title: 'default title',
   setTitle: () => {},
 });
