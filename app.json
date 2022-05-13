@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-typescript-sample",
-    "slug": "expo-typescript-sample",
+    "name": "expo-typescript-boilerplate",
+    "slug": "expo-typescript-boilerplate",
     "privacy": "public",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
