@@ -29,7 +29,7 @@ export default function HomeStack() {
         component={Details}
         options={{
           title: 'Details',
-          headerShown: false,
+          headerShown: true,
         }}
       />
     </Stack.Navigator>
