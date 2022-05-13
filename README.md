@@ -96,5 +96,3 @@ const removeStorage = async() => {
 ## Licence
 
 This project is available under the MIT license. See the [LICENSE](https://github.com/kiyohken2000/expo-typescript-boilerplate/blob/main/LICENSE) file for more info.
-
-```
